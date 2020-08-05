@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface Tikets {
 
-    public List<Tiket> getTiketsByState(TiketState state);
+    public List<Tiket> getTiketsByState(TiketState stateId);
 
 }

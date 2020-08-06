@@ -1,9 +1,9 @@
 package services;
 
 import entity.Tiket;
-import entity.enums.TiketState;
+import entity.enums.TicketState;
 import org.junit.jupiter.api.Test;
-import repository.TiketRepository;
+import repository.TicketRepository;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ class TiketsImplTest {
     @Test
     void getTiketsByStateTest() {
 
-        TiketRepository tiketRepository = null;
-        List<Tiket> tikets = tiketRepository.findAllByStateId(TiketState.UNREADED.getId());
+        TicketRepository ticketRepository = null;
+        List<Tiket> tikets = ticketRepository.findAllByStateId(TicketState.UNREADED.getId());
         tikets.stream().forEach(System.out::println);
     }
 }

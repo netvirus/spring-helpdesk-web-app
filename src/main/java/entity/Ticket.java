@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "tikets")
-public class Tiket {
+@Table(name = "tickets")
+public class Ticket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -30,10 +30,10 @@ public class Tiket {
     @Column(name = "messageId")
     private int messageId;
 
-    public Tiket() {
+    public Ticket() {
     }
 
-    public Tiket(int id, Timestamp createdDate, Timestamp closedDate, int stateId, int ownerId, int managerId, int messageId) {
+    public Ticket(int id, Timestamp createdDate, Timestamp closedDate, int stateId, int ownerId, int managerId, int messageId) {
         this.id = id;
         this.createdDate = createdDate;
         this.closedDate = closedDate;

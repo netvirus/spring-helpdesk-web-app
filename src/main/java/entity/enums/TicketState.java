@@ -2,7 +2,7 @@ package entity.enums;
 
 import java.util.Arrays;
 
-public enum TiketState {
+public enum TicketState {
     UNREADED("unreaded", 0),
     READED("readed", 1),
     OPENED("opened", 2),
@@ -12,7 +12,7 @@ public enum TiketState {
     private final int _id;
     private final String _name;
 
-    TiketState(String name, int id) {
+    TicketState(String name, int id) {
         _name = name;
         _id = id;
     }
@@ -27,12 +27,12 @@ public enum TiketState {
         return _name;
     }
 
-    public static TiketState getByName(String name)
+    public static TicketState getByName(String name)
     {
         return Arrays.asList(values()).stream().filter(t -> t.getName().equals(name)).findAny().orElse(null);
     }
 
-    public static TiketState getById(int id)
+    public static TicketState getById(int id)
     {
         return Arrays.asList(values()).stream().filter(t -> t.getId() == id).findAny().orElse(null);
     }

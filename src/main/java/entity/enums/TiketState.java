@@ -1,29 +1,39 @@
 package entity.enums;
 
+import java.util.Arrays;
+
 public enum TiketState {
-    UNREADED(0),
-    READED(1),
-    OPENED(2),
-    CLOSED(3),
-    DELETED(4);
+    UNREADED("unreaded", 0),
+    READED("readed", 1),
+    OPENED("opened", 2),
+    CLOSED("closed", 3),
+    DELETED("deleted", 4);
 
-    private int id;
+    private final int _id;
+    private final String _name;
 
-    TiketState(int id) {
-        this.id = id;
+    TiketState(String name, int id) {
+        _name = name;
+        _id = id;
     }
 
-    public int getId() {
-        return id;
+    public final int getId()
+    {
+        return _id;
     }
 
-    public int getIdByMask(String mask) {
-        for (TiketState state : values())
-        {
-            if (state.name().equals(mask)) {
-                return state.getId();
-            }
-        }
-        return -1;
+    public final String getName()
+    {
+        return _name;
+    }
+
+    public static TiketState getByName(String name)
+    {
+        return Arrays.asList(values()).stream().filter(t -> t.getName().equals(name)).findAny().orElse(null);
+    }
+
+    public static TiketState getById(int id)
+    {
+        return Arrays.asList(values()).stream().filter(t -> t.getId() == id).findAny().orElse(null);
     }
 }

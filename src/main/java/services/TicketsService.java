@@ -28,7 +28,7 @@ public class TicketsService implements ITickets {
     @Override
     public List<Ticket> findTicketsByState(int stateId) {
         List<Ticket> tickets = new ArrayList<>();
-        ticketRepository.findAllByStateId(stateId).forEach(tickets::add);
+        ticketRepository.findByStateId(stateId).forEach(tickets::add);
         return tickets;
     }
 
